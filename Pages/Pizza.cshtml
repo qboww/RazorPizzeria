@@ -1,0 +1,38 @@
+﻿@page
+@model RazorPizzeria.Pages.PizzaModel
+@{
+}
+
+<div class="text-center">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 mb-5 mt-4">
+
+                <div class="w-100 row makeYourOwnDiv listImage">
+                    <div class="col-8 align-items-start">
+                        <div class="align-middle makeYourOwnText">
+                            <h3 style="text-align: left;">Create your own Pizza!</h3>
+                            <p style="text-align: left;">Make your own Pizza with our Pizza Creator.</p>
+                            <a class="btn btn-light text-dark" style="float: left; margin: 0 20px 20px 0; font-weight: bold;" asp-area="" asp-page="Forms/CustomPizza">Try now!</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            @foreach (var pizza in Model.fakePizzaDB)
+            {
+                var photoPath = "~/images/Pizzas/" + (pizza.ImageTitle + ".png");
+
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card h-100">
+                        <img src="@photoPath" class="card-img-top" alt="@pizza.PizzaName" asp-append-version="true" />
+                        <div class="card-body">
+                            <h5 class="card-title">@pizza.PizzaName</h5>
+                            <p class="card-text">Description of the pizza goes here.</p>
+                            <a class="btn btn-dark text-light" href="/Checkout/Checkout?PizzaName=@pizza.PizzaName&amp;ImageTitle=@pizza.ImageTitle&amp;PizzaPrice=@pizza.FinalPrice">Order now</a>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
