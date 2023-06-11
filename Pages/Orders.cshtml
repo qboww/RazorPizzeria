@@ -1,44 +1,85 @@
 ﻿@page
 @model RazorPizzeria.Pages.OrdersModel
 @{
+    ViewData["Title"] = "Orders";
+    var pageNumber = 99;
+    var pageSize = 10;
+    var orders = Model.PizzaOrders;
+    var totalOrders = Model.PizzaOrders.Count;
+    var totalPages = (int)Math.Ceiling(totalOrders / (double)pageSize);
 }
 
-<h3>Orders</h3>
+<div>
+    <div class="w-100 mt-5 row makeYourOwnDiv listImage">
+        <div class="col-8 align-items-start">
+            <div class="align-middle makeYourOwnText">
+                <h3 style="text-align: left;">Public DB data</h3>
+                <p style="text-align: left;">Here are all the orders</p>
+            </div>
+        </div>
+        <div class="col-4 d-flex align-items-center justify-content-end">
+            <img class="" src="~/images/Pizzas/server.png" style="max-width: 100%;" alt="Pizza Oven">
+        </div>
+    </div>
 
-<hr />
-
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                Id
-            </th>
-            <th>
-                Pizza Name
-            </th>
-            <th>
-                Price
-            </th>
-        </tr>
-    </thead>
-    <tbody>
-
-        @foreach (var order in Model.PizzaOrders)
-        {
+    <table class="table mt-5">
+        <thead>
             <tr>
-                <td>
-                    @order.Id
-                </td>
-
-                <td>
-                    @order.PizzaName
-                </td>
-
-                <td>
-                    @order.BasePrice
-                </td>
+                <th>
+                    Id
+                </th>
+                <th>
+                    Pizza Name
+                </th>
+                <th>
+                    Price
+                </th>
             </tr>
-        }
+        </thead>
+        <tbody>
 
-    </tbody>
-</table>
+            @foreach (var order in orders)
+            {
+                <tr>
+                    <td>
+                        @order.Id
+                    </td>
+
+                    <td>
+                        @order.PizzaName
+                    </td>
+
+                    <td>
+                        @order.BasePrice UAH
+                    </td>
+                </tr>
+            }
+
+        </tbody>
+    </table>
+
+    <nav>
+        <ul class="pagination justify-content-center">
+            @if (pageNumber > 1)
+            {
+                <li class="page-item">
+                    <a class="page-link" href="/Orders?pageNumber=@(pageNumber - 1)">Previous</a>
+                </li>
+            }
+
+            @for (int i = 1; i <= totalPages; i++)
+            {
+                <li class="page-item @(i == pageNumber ? "active" : "")">
+                    <a class="page-link" href="/Orders?pageNumber=@i">@i</a>
+                </li>
+            }
+
+            @if (pageNumber < totalPages)
+            {
+                <li class="page-item">
+                    <a class="page-link" href="/Orders?pageNumber=@(pageNumber + 1)">Next</a>
+                </li>
+            }
+        </ul>
+    </nav>
+</div>

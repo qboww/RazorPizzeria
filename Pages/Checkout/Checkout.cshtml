@@ -4,15 +4,41 @@
 }
 
 <h1>Your Order!</h1>
+
 @{
     var photoPath = "~/images/Pizzas/" + (@Model.ImageTitle + ".png");
 }
+
 <div class="align-content-center">
     <div class="col-3 mx-auto mb-5">
         <img src="@photoPath" class="w-100" asp-append-version="true" />
         <p>Your order for @Model.PizzaName Pizza is ready!</p>
-        <p>Total Purchase price for your Order is: @Model.PizzaPrice</p>
+        <p>Total Purchase price for your Order is: @Model.PizzaPrice$</p>
         <br />
-        <a class="btn btn-primary mt-1 mx-auto" asp-area="" asp-page="ThankYou">Confirm Order</a>
+        <button class="btn btn-primary mt-1 mx-auto" data-bs-toggle="modal" data-bs-target="#exampleModal">Confirm Order</button>
     </div>
 </div>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Thanks for your order!</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>Your pizza will be ready for takeaway in 30 minutes.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="redirectToPizzaPage()">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.7.0/js/bootstrap.bundle.min.js"></script>
+<script>
+    function redirectToPizzaPage() {
+        window.location.href = '/Pizza';
+    }
+</script>

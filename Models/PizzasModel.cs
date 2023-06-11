@@ -6,6 +6,8 @@
         public string PizzaName { get; set; }
         public float BasePrice { get; set; } = 2;
         public float FinalPrice { get; set; }
+        public string Description { get; set; }
+        public int Weight { get; set; }
 
         public bool TomatoSauce { get; set; }
         public bool Cheese { get; set; }
