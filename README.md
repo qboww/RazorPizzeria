@@ -1,9 +1,7 @@
-# RazorPizzeria-EF-Cor
-## Udemy - ASP.Net Core
+# RazorPizzeria-EF-Core
+##Razor Pages pizzeria app.
 
-###Razor Pages pizzeria app.
-
->Used frameworks:
+Used frameworks:
 - ASP.Net Core
 - Razor Pages
 - Entity Framework Core
