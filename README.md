@@ -1,4 +1,4 @@
-# RazorPizzeria-EF-Core
+# RazorPizzeria
 ##Razor Pages pizzeria app.
 
 Used frameworks:
