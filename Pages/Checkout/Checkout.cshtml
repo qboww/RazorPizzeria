@@ -1,21 +1,17 @@
 ﻿@page
 @model RazorPizzeria.Pages.Checkout.CheckoutModel
 @{
-}
-
-<h1>Your Order!</h1>
-
-@{
     var photoPath = "~/images/Pizzas/" + (@Model.ImageTitle + ".png");
 }
 
-<div class="align-content-center">
-    <div class="col-3 mx-auto mb-5">
-        <img src="@photoPath" class="w-100" asp-append-version="true" />
-        <p>Your order for @Model.PizzaName Pizza is ready!</p>
-        <p>Total Purchase price for your Order is: @Model.PizzaPrice$</p>
-        <br />
-        <button class="btn btn-primary mt-1 mx-auto" data-bs-toggle="modal" data-bs-target="#exampleModal">Confirm Order</button>
+<div class="d-flex justify-content-center">
+    <div class="card shadow rounded-5" style="width: 25rem">
+        <img src="@photoPath" asp-append-version="true" />
+        <div class="card-body">
+            <h5 class="card-title">Your order for @Model.PizzaName is ready!</h5>
+            <p class="card-text">Total Purchase price for your Order is: @Model.PizzaPrice UAH</p>
+            <button class="btn btn-dark text-light mt-1 mx-auto" data-bs-toggle="modal" data-bs-target="#exampleModal">Confirm Order</button>
+        </div>
     </div>
 </div>
 
@@ -24,12 +20,12 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalLabel">Thanks for your order!</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 <p>Your pizza will be ready for takeaway in 30 minutes.</p>
+                
             </div>
-            <div class="modal-footer">
+            <div class="card-footer d-flex justify-content-end">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="redirectToPizzaPage()">Close</button>
             </div>
         </div>

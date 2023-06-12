@@ -1,16 +1,13 @@
 ﻿@page
 @model RazorPizzeria.Pages.OrdersModel
 @{
-    ViewData["Title"] = "Orders";
-    var pageNumber = 99;
-    var pageSize = 10;
-    var orders = Model.PizzaOrders;
-    var totalOrders = Model.PizzaOrders.Count;
-    var totalPages = (int)Math.Ceiling(totalOrders / (double)pageSize);
+    var totalPages = (int)Math.Ceiling((double)Model.PizzaOrders.Count / 12);
+    var pageNumber = Request.Query.ContainsKey("pageNumber") ? int.Parse(Request.Query["pageNumber"]) : 1;
+    pageNumber = Math.Max(1, Math.Min(pageNumber, totalPages));
 }
 
 <div>
-    <div class="w-100 mt-5 row makeYourOwnDiv listImage">
+    <div class="w-100 mt-3 row makeYourOwnDiv listImage">
         <div class="col-8 align-items-start">
             <div class="align-middle makeYourOwnText">
                 <h3 style="text-align: left;">Public DB data</h3>
@@ -22,7 +19,7 @@
         </div>
     </div>
 
-    <table class="table mt-5">
+    <table class="table mt-3">
         <thead>
             <tr>
                 <th>
@@ -37,8 +34,12 @@
             </tr>
         </thead>
         <tbody>
+            @{
+                var startIndex = (pageNumber - 1) * 12;
+                var currentPageOrders = Model.PizzaOrders.Skip(startIndex).Take(12);
+            }
 
-            @foreach (var order in orders)
+            @foreach (var order in currentPageOrders)
             {
                 <tr>
                     <td>
@@ -50,36 +51,46 @@
                     </td>
 
                     <td>
-                        @order.BasePrice UAH
+                        @order.BasePrice.0 UAH
                     </td>
                 </tr>
             }
 
         </tbody>
     </table>
+</div>
 
-    <nav>
-        <ul class="pagination justify-content-center">
-            @if (pageNumber > 1)
-            {
-                <li class="page-item">
-                    <a class="page-link" href="/Orders?pageNumber=@(pageNumber - 1)">Previous</a>
-                </li>
-            }
+<nav class="fixed-pagination" aria-label="Page navigation">
+    <ul class="pagination justify-content-center mt-3">
+        @{
+            var previousPage = Math.Max(1, pageNumber - 1);
+            var nextPage = Math.Min(totalPages, pageNumber + 1);
+        }
 
-            @for (int i = 1; i <= totalPages; i++)
+        <li class="page-item @(pageNumber == 1 ? "disabled" : "")">
+            <a class="page-link" href="/Orders?pageNumber=@previousPage">Previous</a>
+        </li>
+
+        @{
+            for (int i = 1; i <= totalPages; i++)
             {
-                <li class="page-item @(i == pageNumber ? "active" : "")">
+                <li class="page-item @(pageNumber == i ? "active" : "")">
                     <a class="page-link" href="/Orders?pageNumber=@i">@i</a>
                 </li>
             }
+        }
 
-            @if (pageNumber < totalPages)
-            {
-                <li class="page-item">
-                    <a class="page-link" href="/Orders?pageNumber=@(pageNumber + 1)">Next</a>
-                </li>
-            }
-        </ul>
-    </nav>
-</div>
+        <li class="page-item @(pageNumber == totalPages ? "disabled" : "")">
+            <a class="page-link" href="/Orders?pageNumber=@nextPage">Next</a>
+        </li>
+    </ul>
+</nav>
+
+<style>
+    .fixed-pagination {
+        position: fixed;
+        bottom: 65px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+</style>

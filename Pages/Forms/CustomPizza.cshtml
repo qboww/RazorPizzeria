@@ -3,34 +3,67 @@
 @{
 }
 
-<div class="text-center container">
-    <h1 class="text-center">Create your Own Pizza!</h1>
-    <form method="post" class="mx-auto mt-5 mb-5 px-5 pt-5 pb-5 rounded-5 bg-light col-4">
-        <input type="text" asp-for="Pizza.PizzaName" placeholder="Give Your Pizza a Name..." />
-        <br />
-        <input type="checkbox" asp-for="Pizza.TomatoSauce" placeholder="Tomato Sauce" />Tomato Sauce
-        <br />
+<div class="row mt-5 mb-5">
+    <div class="col-sm-6">
+        <div class="card shadow" style="width: auto; height: 31rem;">
 
-        <input type="checkbox" asp-for="Pizza.Cheese" placeholder="Cheese" />Cheese
-        <br />
+            <div class="card-header bg-dark text-light">
+                Featured
+            </div>
 
-        <input type="checkbox" asp-for="Pizza.Peperoni" placeholder="Peperoni" />Peperoni
-        <br />
+            <div class="card-body">
 
-        <input type="checkbox" asp-for="Pizza.Ham" placeholder="Ham" />Ham
-        <br />
+                <h2 class="card-title">Create your own pizza!</h2>
 
-        <input type="checkbox" asp-for="Pizza.Mushroom" placeholder="Mushroom" />Mushroom
-        <br />
+                <form method="post" class="rounded-5 bg-light col-4">
+                    <div>
 
-        <input type="checkbox" asp-for="Pizza.Tuna" placeholder="Tuna" />Tuna
-        <br />
+                        <label class="mt-2 mb-1" for="exampleFormControlInput1" style="font-weight: 600">Pizza name</label>
+                        <input type="text" asp-for="Pizza.PizzaName" style="width: 20rem" placeholder="Name example" class="mb-2" />
+                        <label class="mt-2 mb-1" for="exampleFormControlInput1" style="font-weight: 600">Select toppings below</label>
 
-        <input type="checkbox" asp-for="Pizza.Beef" placeholder="Beef" />Beef
-        <br />
-
-        <input type="checkbox" asp-for="Pizza.Pineapple" placeholder="Pineapple" />Pineapple
-        <br />
-        <button class="btn btn-primary mt-1" type="submit">Order My Pizza</button>
-    </form>
+                        <div style="text-align: left">
+                            <input type="checkbox" asp-for="Pizza.TomatoSauce" placeholder="Tomato Sauce" style="margin: 0 3px 0 0" />Tomato Sauce
+                            <br />
+                            <input type="checkbox" asp-for="Pizza.Cheese" placeholder="Cheese" style="margin: 0 3px 0 0" />Cheese
+                            <br />
+                            <input type="checkbox" asp-for="Pizza.Peperoni" placeholder="Peperoni" style="margin: 0 3px 0 0" />Peperoni
+                            <br />
+                            <input type="checkbox" asp-for="Pizza.Ham" placeholder="Ham" style="margin: 0 3px 0 0" />Ham
+                            <br />
+                            <input type="checkbox" asp-for="Pizza.Mushroom" placeholder="Mushroom" style="margin: 0 3px 0 0" />Mushroom
+                            <br />
+                            <input type="checkbox" asp-for="Pizza.Tuna" placeholder="Tuna" style="margin: 0 3px 0 0" />Tuna
+                            <br />
+                            <input type="checkbox" asp-for="Pizza.Beef" placeholder="Beef" style="margin: 0 3px 0 0" />Beef
+                            <br />
+                            <input type="checkbox" asp-for="Pizza.Pineapple" placeholder="Pineapple" style="margin: 0 3px 0 0" />Pineapple
+                            <br />
+                        </div>
+                        <button class="mt-3 btn btn-dark text-white" type="submit">Create order</button>
+                    </div>
+                </form>
+            </div>
+            <div class="card-footer bg-dark">
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6">
+        <div class="card text-white bg-dark mb-3 shadow" style="width: 20rem; height: 15rem">
+            <div class="card-body">
+                <h5 class="card-title">Build Your Perfect Pizza</h5>
+                <p class="card-text">Create your own delicious pizza by choosing from a wide range of fresh ingredients and toppings. Whether you prefer classic flavors or want to experiment with unique combinations, our custom pizza creation allows you to personalize every aspect of your pizza.</p>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="card text-white bg-dark shadow" style="width: 20rem; height: 15rem">
+                <div class="card-body">
+                    <h5 class="card-title">What do we offer?</h5>
+                    <p class="card-text">We offer an extensive selection of toppings, including premium meats, fresh vegetables, and a variety of cheeses. From traditional favorites like pepperoni and mushrooms to gourmet options like truffle oil and goat cheese, the choice is yours.</p>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+
+
