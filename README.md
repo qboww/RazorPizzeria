@@ -1,5 +1,5 @@
 # RazorPizzeria
-##Razor Pages pizzeria app.
+## Razor Pages pizzeria app.
 
 Used frameworks:
 - ASP.Net Core
