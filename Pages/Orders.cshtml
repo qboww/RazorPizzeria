@@ -7,7 +7,7 @@
 }
 
 <div>
-    <div class="w-100 mt-3 row makeYourOwnDiv listImage">
+    <div class="w-100 mt-4 row makeYourOwnDiv listImage">
         <div class="col-8 align-items-start">
             <div class="align-middle makeYourOwnText">
                 <h3 style="text-align: left;">Public DB data</h3>
@@ -19,8 +19,8 @@
         </div>
     </div>
 
-    <table class="table mt-3">
-        <thead>
+    <table class="table mt-4 table-striped tbl-container bdr">
+        <thead class="table-dark">
             <tr>
                 <th>
                     Id
@@ -57,7 +57,15 @@
             }
 
         </tbody>
+        <tfoot class="table-dark rounded">
+            <tr>
+                <th></th>
+                <th></th>
+                <th></th>
+            </tr>
+        </tfoot>
     </table>
+
 </div>
 
 <nav class="fixed-pagination" aria-label="Page navigation">
@@ -92,5 +100,10 @@
         bottom: 65px;
         left: 50%;
         transform: translateX(-50%);
+    }
+
+    .bdr {
+        border-radius: 6px;
+        overflow: hidden;
     }
 </style>
