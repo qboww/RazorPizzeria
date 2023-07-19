@@ -12,4 +12,4 @@ Used frameworks:
 ![alt text](https://github.com/qboww/RazorPizzeria/blob/master/wwwroot/repo-pics/custom.jpg)
 ![alt text](https://github.com/qboww/RazorPizzeria/blob/master/wwwroot/repo-pics/modal.jpg)
 ![alt text](https://github.com/qboww/RazorPizzeria/blob/master/wwwroot/repo-pics/confirm.jpg)
-![alt text](https://github.com/qboww/RazorPizzeria/blob/master/wwwroot/repo-pics/homr.jpg)
+![alt text](https://github.com/qboww/RazorPizzeria/blob/master/wwwroot/repo-pics/home.jpg)
