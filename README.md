@@ -7,9 +7,13 @@ Used frameworks:
 - Entity Framework Core
 - Bootstrap 5
 
-![alt text](https://github.com/EvheniiSarancha/RazorPizzeria-EF-Core/blob/master/wwwroot/repo-pics/pizzas.jpg)
-![alt text](https://github.com/EvheniiSarancha/RazorPizzeria-EF-Core/blob/master/wwwroot/repo-pics/orders.jpg)
-![alt text](https://github.com/EvheniiSarancha/RazorPizzeria-EF-Core/blob/master/wwwroot/repo-pics/custom.jpg)
-![alt text](https://github.com/EvheniiSarancha/RazorPizzeria-EF-Core/blob/master/wwwroot/repo-pics/home.jpg)
-![alt text](https://github.com/EvheniiSarancha/RazorPizzeria-EF-Core/blob/master/wwwroot/repo-pics/confirm.jpg)
-![alt text](https://github.com/EvheniiSarancha/RazorPizzeria-EF-Core/blob/master/wwwroot/repo-pics/modal.jpg)
+![alt text](https://github.com/qboww/Invoices/blob/master/wwwroot/images/readme/home1.png)
+![alt text](https://github.com/qboww/Invoices/blob/master/wwwroot/images/readme/home2.png)
+![alt text](https://github.com/qboww/Invoices/blob/master/wwwroot/images/readme/list.png)
+![alt text](https://github.com/qboww/Invoices/blob/master/wwwroot/images/readme/create.png)
+![alt text](https://github.com/qboww/Invoices/blob/master/wwwroot/images/readme/edit.png)
+![alt text](https://github.com/qboww/Invoices/blob/master/wwwroot/images/readme/details.png)
+![alt text](https://github.com/qboww/Invoices/blob/master/wwwroot/images/readme/manager.png)
+![alt text](https://github.com/qboww/Invoices/blob/master/wwwroot/images/readme/settings.png)
+![alt text](https://github.com/qboww/Invoices/blob/master/wwwroot/images/readme/login.png)
+![alt text](https://github.com/qboww/Invoices/blob/master/wwwroot/images/readme/register.png)
